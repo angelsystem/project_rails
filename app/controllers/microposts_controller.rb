@@ -1,6 +1,7 @@
 class MicropostsController < ApplicationController
   # GET /microposts
   # GET /microposts.json
+
   def index
     @microposts = Micropost.all
 
@@ -61,7 +62,7 @@ class MicropostsController < ApplicationController
     respond_to do |format|
       if @micropost.update_attributes(params[:micropost])
         format.html { redirect_to @micropost, notice: 'Micropost was successfully updated.' }
-        format.json { head :no_content }
+        format.json { thead :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @micropost.errors, status: :unprocessable_entity }
@@ -77,7 +78,7 @@ class MicropostsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to microposts_url }
-      format.json { head :no_content }
+      format.json { thead :no_content }
     end
   end
 end
